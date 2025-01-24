@@ -36,20 +36,17 @@
     button:hover {
       background-color: #0056b3;
     }
-    a {
-      color: #007bff;
-    }
   </style>
 </head>
 <body>
   <video id="camera" autoplay playsinline></video>
   <button id="startRecording">Start Recording</button>
-  <p id="videoLink"></p>
+  <p id="videoDataUrl"></p>
 
   <script>
     const videoElement = document.getElementById("camera");
     const startRecordingButton = document.getElementById("startRecording");
-    const videoLink = document.getElementById("videoLink");
+    const videoDataUrl = document.getElementById("videoDataUrl");
     let mediaRecorder;
     let recordedChunks = [];
 
@@ -85,14 +82,15 @@
 
       mediaRecorder.onstop = () => {
         const blob = new Blob(recordedChunks, { type: "video/webm" });
-        const videoUrl = URL.createObjectURL(blob);
-        const downloadLink = document.createElement("a");
-        downloadLink.href = videoUrl;
-        downloadLink.textContent = "Download Recorded Video";
-        downloadLink.download = "recorded-video.webm";
 
-        // Show video data URL
-        videoLink.innerHTML = `Video URL: <a href="${videoUrl}" target="_blank">${videoUrl}</a>`;
+        // Convert the blob to a base64 string
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          const base64String = reader.result.split(',')[1]; // Remove data URL prefix
+          const base64VideoUrl = `data:video/mp4;base64,${base64String}`;
+          videoDataUrl.innerHTML = `Video Data URL: <br><textarea rows="5" cols="80">${base64VideoUrl}</textarea>`;
+        };
+        reader.readAsDataURL(blob);
       };
 
       mediaRecorder.start();
