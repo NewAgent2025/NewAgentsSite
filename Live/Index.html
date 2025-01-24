@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>iPhone Camera Access and Video Upload</title>
+  <title>iPhone Camera Access</title>
   <style>
     body {
       margin: 0;
@@ -14,6 +14,9 @@
       height: 100vh;
       background-color: #f4f4f4;
     }
+    video, button, a {
+      margin: 10px 0;
+    }
     video {
       width: 100%;
       height: auto;
@@ -23,94 +26,84 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
     button {
-      margin-top: 20px;
       padding: 10px 20px;
-      font-size: 16px;
+      background-color: #007bff;
+      color: #fff;
       border: none;
       border-radius: 8px;
-      background-color: #007bff;
-      color: white;
       cursor: pointer;
     }
-    button:disabled {
-      background-color: #ccc;
-      cursor: not-allowed;
+    button:hover {
+      background-color: #0056b3;
+    }
+    a {
+      color: #007bff;
     }
   </style>
 </head>
 <body>
   <video id="camera" autoplay playsinline></video>
-  <button id="recordButton">Start Recording</button>
+  <button id="startRecording">Start Recording</button>
+  <p id="videoLink"></p>
 
   <script>
     const videoElement = document.getElementById("camera");
-    const recordButton = document.getElementById("recordButton");
+    const startRecordingButton = document.getElementById("startRecording");
+    const videoLink = document.getElementById("videoLink");
     let mediaRecorder;
     let recordedChunks = [];
 
     async function startCamera() {
       try {
-        // Request access to the camera
         const stream = await navigator.mediaDevices.getUserMedia({
-          video: { facingMode: "environment" }, // Use "user" for the front camera
-          audio: true // Include audio in the recording
-        });
-        // Display the camera feed in the video element
-        videoElement.srcObject = stream;
-
-        // Initialize MediaRecorder
-        mediaRecorder = new MediaRecorder(stream);
-        mediaRecorder.ondataavailable = (event) => {
-          if (event.data.size > 0) {
-            recordedChunks.push(event.data);
+          video: {
+            facingMode: "environment" // Use "user" for the front camera
           }
-        };
-
-        mediaRecorder.onstop = () => {
-          // Combine recorded chunks into a Blob
-          const blob = new Blob(recordedChunks, { type: "video/webm" });
-          recordedChunks = []; // Reset chunks
-
-          // Create a FormData object and send the Blob to the server
-          const formData = new FormData();
-          formData.append("video", blob, "recording.webm");
-
-          // Upload the video to the server
-          fetch("http://10.0.0.131/IOSLive/upload.php", {
-            method: "POST",
-            body: formData,
-          })
-          .then((response) => response.text())
-          .then((data) => {
-            alert("Video uploaded successfully: " + data);
-          })
-          .catch((error) => {
-            console.error("Error uploading the video:", error);
-          });
-        };
+        });
+        videoElement.srcObject = stream;
       } catch (error) {
-        console.error("Error accessing the camera:", error);
+        console.error("Error accessing the camera: ", error);
         alert("Could not access the camera. Please check your permissions.");
       }
     }
 
-    // Start recording when the button is clicked
-    recordButton.addEventListener("click", () => {
-      if (mediaRecorder.state === "inactive") {
-        recordButton.disabled = true;
-        recordButton.textContent = "Recording...";
-
-        // Start recording for 15 seconds
-        mediaRecorder.start();
-        setTimeout(() => {
-          mediaRecorder.stop();
-          recordButton.disabled = false;
-          recordButton.textContent = "Start Recording";
-        }, 15000); // 15 seconds
+    function startRecording() {
+      const stream = videoElement.srcObject;
+      if (!stream) {
+        alert("Camera is not active. Please reload the page and try again.");
+        return;
       }
-    });
 
-    // Start the camera when the page loads
+      mediaRecorder = new MediaRecorder(stream);
+      recordedChunks = [];
+
+      mediaRecorder.ondataavailable = (event) => {
+        if (event.data.size > 0) {
+          recordedChunks.push(event.data);
+        }
+      };
+
+      mediaRecorder.onstop = () => {
+        const blob = new Blob(recordedChunks, { type: "video/webm" });
+        const videoUrl = URL.createObjectURL(blob);
+        const downloadLink = document.createElement("a");
+        downloadLink.href = videoUrl;
+        downloadLink.textContent = "Download Recorded Video";
+        downloadLink.download = "recorded-video.webm";
+
+        // Show video data URL
+        videoLink.innerHTML = `Video URL: <a href="${videoUrl}" target="_blank">${videoUrl}</a>`;
+      };
+
+      mediaRecorder.start();
+      setTimeout(() => {
+        mediaRecorder.stop();
+        alert("Recording stopped after 15 seconds.");
+      }, 15000); // 15 seconds
+    }
+
+    startRecordingButton.addEventListener("click", startRecording);
+
     window.onload = startCamera;
   </script>
 </body>
