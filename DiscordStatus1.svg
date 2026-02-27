@@ -1,36 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Discord User Status Loader</title>
-<style>
-  body {
-    background-color: #0D1117;
-  }
-  .bg { fill: #0F141C; }
-  .username {
-    fill: #fff;
-    font-family: Segoe UI, sans-serif;
-    font-weight: 700;
-    font-size: 20px;
-  }
-  .status-text {
-    fill: #b3b5b8;
-    font-family: Segoe UI, sans-serif;
-    font-size: 15px;
-  }
-  .Status-Dot-Online { fill: #45A366; }
-  .Status-Dot-Do-Not-Disturb { fill: #DA3E44; }
-  .Status-Dot-Idle { fill: #FFC04E; }
-  .Status-Dot-Invisible { fill: #84858D; }
+    <meta charset="UTF-8">
+    <title>Discord User Status Loader</title>
+    <style>
+        body {
+            background-color: #0D1117;
+        }
+        .bg { fill: #0F141C; }
+        .username {
+            fill: #fff;
+            font-family: Segoe UI, sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+        }
+        .status-text {
+            fill: #b3b5b8;
+            font-family: Segoe UI, sans-serif;
+            font-size: 15px;
+        }
+        .Status-Dot-Online { fill: #45A366; }
+        .Status-Dot-Do-Not-Disturb { fill: #DA3E44; }
+        .Status-Dot-Idle { fill: #FFC04E; }
+        .Status-Dot-Invisible { fill: #84858D; }
 
-  .status-dot {
-    display: none;
-  }
-  .status-dot.active {
-    display: block;
-  }
-</style>
+        .status-dot { display: none; }
+        .status-dot.active { display: block; }
+    </style>
 </head>
 <body>
 
