@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="382" height="97" viewBox="0 0 382 97">
+
+  <defs>
+    <style>
+      .bg { fill: #202225; }
+      .username {
+        fill: #fff;
+        font-family: Segoe UI, sans-serif;
+        font-weight: 700;
+        font-size: 20px;
+      }
+      .status-text {
+        fill: #b3b5b8;
+        font-family: Segoe UI, sans-serif;
+        font-size: 15px;
+      }
+      .status-dot { fill: #f04747; }
+    </style>
+
+    <clipPath id="pfpClip">
+      <circle cx="51" cy="48" r="31"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg" width="382" height="97" rx="4"/>
+
+  <!-- Profile Picture -->
+  <image
+    href="https://preview.redd.it/curious-if-blitz-ever-had-a-human-form-or-disguise-what-do-v0-sd36nxsnhp4e1.jpg?width=640&crop=smart&auto=webp&s=a1bb6c0095d7d56c4a5469c7b404727fb49d33f6"
+	width="69"
+	height="69"
+    x="20"
+    y="17"
+    clip-path="url(#pfpClip)"
+  />
+
+  <!-- Status Indicator -->
+  <circle cx="71.5" cy="68.5" r="9" fill="#202225"/>
+  <circle class="status-dot" cx="71.5" cy="68.5" r="6.5"/>
+
+  <!-- Username -->
+  <text class="username" x="95" y="45">Blitz</text>
+
+  <!-- Status Text -->
+  <text class="status-text" x="95" y="68">Do Not Disturb</text>
+
+</svg>
