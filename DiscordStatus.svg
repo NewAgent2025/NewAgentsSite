@@ -27,7 +27,7 @@
   </defs>
 
   <!-- Background -->
-  <rect class="bg" width="382" height="97" rx="4"/>
+  <rect class="bg" width="382" height="97" rx="15"/>
 
   <!-- Profile Picture -->
   <image
