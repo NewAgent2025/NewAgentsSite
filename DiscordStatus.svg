@@ -2,7 +2,8 @@
 
   <defs>
     <style>
-      .bg { fill: #202225; }
+/*      .bg { fill: #202225; }*/
+      .bg { fill: #0F141C; }
       .username {
         fill: #fff;
         font-family: Segoe UI, sans-serif;
