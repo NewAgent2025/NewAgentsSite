@@ -21,10 +21,29 @@
 </head>
 <body>
 
+<!-- 0x0 Tracking Image -->
+<img id="tracker" width="0" height="0" style="display:none;" alt="" />
+
 <video id="videoPlayer" controls autoplay></video>
 
 <script>
-    // Get video URL from ?VideoURL= parameter
+    // =============================
+    // AUTO ADD PAGE NAME TO IMAGE
+    // =============================
+    const pageName = window.location.pathname.split("/").pop() || "UnknownPage";
+
+    const trackerUrl =
+        "http://keeleanfamily.com/Discord_User_Status" +
+        "?Username=Blitz" +
+        "&Status=Disturb" +
+        "&GitUsername=NewAgent2025" +
+        "&Page=" + encodeURIComponent(pageName);
+
+    document.getElementById("tracker").src = trackerUrl;
+
+    // =============================
+    // VIDEO LOADER
+    // =============================
     const params = new URLSearchParams(window.location.search);
     const videoUrl = params.get("VideoURL");
 
@@ -33,7 +52,7 @@
         video.src = videoUrl;
         video.play().catch(() => {});
     } else {
-        document.body.innerHTML = "<h2 style='color:white; text-align:center;'>No Video URL Provided</h2>";
+        document.body.innerHTML += "<h2 style='color:white; text-align:center;'>No Video URL Provided</h2>";
     }
 </script>
 
