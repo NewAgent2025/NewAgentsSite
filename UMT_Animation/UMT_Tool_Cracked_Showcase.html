@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UMT_Tool_Cracked_Showcase</title>
+
+    <style>
+        .container {
+            position: relative;
+            width: 1280px;
+            height: 596px;
+            margin: 0 auto;
+            background-image: url('Application_Shadow.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            pointer-events: none;
+        }
+
+        .main-image {
+            position: absolute;
+            top: 0;
+            left: 218px;
+            width: 821px;
+            height: 587px;
+            z-index: 1;
+        }
+
+        .overlay-image {
+            position: absolute;
+            top: 0;
+            left: 220px;
+            width: 821px;
+            height: 587px;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .svg-overlay {
+            position: absolute;
+            width: 23px;
+            height: 23px;
+            z-index: 3;
+            transition: transform 1.8s cubic-bezier(0.22, 1, 0.36, 1);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <img src="Imgs/Main.png" class="main-image">
+
+    <img id="overlayImg" class="overlay-image">
+
+    <svg id="mouseSvg" class="svg-overlay"
+         xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 0 55 81">
+        <path d="M55 50.5158L0.0365621
+                 0L0 74.6314L16.6788
+                 58.6804L26.4748
+                 81L41.7584
+                 74.2988L31.9624
+                 51.9792L55
+                 50.5158Z"
+              fill="white"
+              stroke="black"
+              stroke-width="4"/>
+    </svg>
+
+</div>
+
+<script>
+const mouseSvg = document.getElementById("mouseSvg");
+const overlayImg = document.getElementById("overlayImg");
+
+const scriptLines = `
+X: 330 Y: 223 Wait: 3.32 Click: No Image: Imgs/Main.png
+X: 648 Y: 312 Wait: 2.22 Click: No Image: Imgs/Main.png
+X: 648 Y: 312 Wait: 0.03 Click: Yes Image: Imgs/2nd.png
+X: 648 Y: 312 Wait: 0.12 Click: No Image: Imgs/3rd.png
+X: 648 Y: 312 Wait: 0.12 Click: No Image: Imgs/4th.png
+X: 648 Y: 312 Wait: 0.12 Click: No Image: Imgs/5th.png
+X: 648 Y: 312 Wait: 0.12 Click: No Image: Imgs/6th.png
+X: 648 Y: 312 Wait: 0.12 Click: No Image: Imgs/7th.png
+X: 648 Y: 312 Wait: 0.12 Click: No Image: Imgs/8th.png
+X: 648 Y: 312 Wait: 0.12 Click: No Image: Imgs/9th.png
+X: 648 Y: 312 Wait: 0.12 Click: No Image: Imgs/10th.png
+X: 648 Y: 312 Wait: 0.12 Click: No Image: Imgs/11th.png
+X: 648 Y: 312 Wait: 0.09 Click: No Image: Imgs/12th.png
+X: 648 Y: 312 Wait: 0.09 Click: No Image: Imgs/13th.png
+X: 626 Y: 350 Wait: 0.22 Click: No Image: Imgs/13th.png
+X: 626 Y: 350 Wait: 0.08 Click: Yes Image: Imgs/14th.png
+X: 626 Y: 350 Wait: 0.10 Click: No Image: Imgs/15th.png
+X: 626 Y: 350 Wait: 0.10 Click: No Image: Imgs/16th.png
+X: 626 Y: 350 Wait: 0.10 Click: No Image: Imgs/17th.png
+X: 626 Y: 350 Wait: 0.10 Click: No Image: Imgs/18th.png
+X: 626 Y: 350 Wait: 0.10 Click: No Image: Imgs/19th.png
+X: 626 Y: 350 Wait: 0.10 Click: No Image: Imgs/20th.png
+X: 626 Y: 350 Wait: 0.10 Click: No Image: Imgs/21th.png
+X: 637 Y: 392 Wait: 0.10 Click: No Image: Imgs/21th.png
+X: 637 Y: 392 Wait: 0.05 Click: Yes Image: Imgs/22th.png
+X: 542 Y: 407 Wait: 0.37 Click: No Image: Imgs/23th.png
+X: 393 Y: 375 Wait: 0.55 Click: No Image: Imgs/23th.png
+X: 393 Y: 375 Wait: 0.55 Click: Yes Image: Imgs/24th.png
+X: 658 Y: 323 Wait: 0.42 Click: No Image: Imgs/25th.png
+X: 658 Y: 323 Wait: 0.22 Click: Yes Image: Imgs/26th.png
+X: 658 Y: 323 Wait: 1.42 Click: No Image: Imgs/27th.png
+X: 324 Y: 191 Wait: 1.35 Click: No Image: Imgs/30th.png
+X: 324 Y: 191 Wait: 0.03 Click: Yes Image: Imgs/31th.png
+X: 354 Y: 212 Wait: 0.24 Click: No Image: Imgs/32th.png
+X: 354 Y: 212 Wait: 0.24 Click: Yes Image: Imgs/32th.png
+X: 312 Y: 515 Wait: 3.04 Click: No Image: Imgs/33th.png
+X: 242 Y: 535 Wait: 1.45 Click: No Image: Imgs/33th.png
+X: 242 Y: 535 Wait: 0.02 Click: Yes Image: Imgs/34th.png
+X: 330 Y: 223 Wait: 0.32 Click: No Image: Imgs/Main.png
+`.trim().split("\n");
+
+function moveSmooth(x, y) {
+    mouseSvg.style.transition = "transform 1.8s cubic-bezier(0.22,1,0.36,1)";
+    mouseSvg.style.transform = `translate(${x}px, ${y}px) scale(1)`;
+}
+
+async function clickEffect(x, y) {
+    mouseSvg.style.transition = "transform 0.14s ease";
+    mouseSvg.style.transform = `translate(${x}px, ${y}px) scale(0.6)`;
+
+    await new Promise(r => setTimeout(r, 120));
+
+    mouseSvg.style.transition = "transform 0.4s ease-out";
+    mouseSvg.style.transform = `translate(${x}px, ${y}px) scale(1)`;
+}
+
+async function runLoop() {
+    while (true) {
+        for (const line of scriptLines) {
+
+            const x = parseInt(line.match(/X:\s*(\d+)/)[1]);
+            const y = parseInt(line.match(/Y:\s*(\d+)/)[1]);
+            const wait = parseFloat(line.match(/Wait:\s*([\d.]+)/)[1]) * 1000;
+            const click = line.match(/Click:\s*(Yes|No)/i)[1] === "Yes";
+            const image = line.match(/Image:\s*(.+)/i)[1];
+
+            overlayImg.src = image;
+
+            if (click) {
+                await clickEffect(x, y);
+            } else {
+                moveSmooth(x, y);
+            }
+
+            await new Promise(r => setTimeout(r, wait));
+        }
+    }
+}
+
+runLoop();
+</script>
+
+</body>
+</html>
