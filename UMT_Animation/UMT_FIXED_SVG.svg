@@ -1,96 +1,102 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg 
-  xmlns="http://www.w3.org/2000/svg"
-  xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="1280px" 
-  height="596px" 
-  viewBox="0 0 1280 596"
-  style="background: black;">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="1280" height="596" viewBox="0 0 1280 596">
 
-  <!-- Background shadow layer -->
-  <image 
-    x="0" y="0" 
-    width="1280" height="596"
-    xlink:href="Application_Shadow.png"/>
+  <!-- Overall cycle duration – adjust this to change speed -->
+  <defs>
+    <animate id="masterClock" attributeName="dummy" dur="42s" repeatCount="indefinite" begin="0s"/>
+  </defs>
 
-  <!-- Base/main image layer (usually stays the same) -->
-  <image 
-    id="mainLayer"
-    x="218" y="0" 
-    width="821" height="587"
-    xlink:href="Imgs/Main.png"/>
+  <!-- Background shadow (static) -->
+  <image x="0" y="0" width="1280" height="596" xlink:href="Application_Shadow.png"/>
 
-  <!-- Overlay layer — this one changes -->
-  <image 
-    id="overlay"
-    x="220" y="0" 
-    width="821" height="587"
-    xlink:href="Imgs/Main.png"/>
+  <!-- Container group for the changing content (offset like original) -->
+  <g transform="translate(220, 0)">
 
-  <!-- Mouse cursor group -->
-  <g id="cursor" transform="translate(100,100)">
-    <svg 
-      width="23" 
-      height="23" 
-      viewBox="0 0 55 81"
-      style="transition: transform 1.8s cubic-bezier(0.22,1,0.36,1);"
-    >
-      <path 
-        d="M55 50.5158L0.0365621 0L0 74.6314L16.6788 58.6804L26.4748 81L41.7584 74.2988L31.9624 51.9792L55 50.5158Z"
-        fill="white"
-        stroke="black"
-        stroke-width="4"/>
-    </svg>
+    <!-- All overlay frames as stacked images – change via opacity -->
+    <!-- Add one <image> per unique frame. Duplicate if same image appears multiple times. -->
+
+    <image id="frame-main"   x="0" y="0" width="821" height="587" xlink:href="Imgs/Main.png"   opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.02;0.98;1" dur="42s" repeatCount="indefinite"/>
+    </image>
+
+    <image id="frame-2nd"    x="0" y="0" width="821" height="587" xlink:href="Imgs/2nd.png"    opacity="0">
+      <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.07;0.075;0.085;1" dur="42s" repeatCount="indefinite"/>
+    </image>
+
+    <image id="frame-3rd"    x="0" y="0" width="821" height="587" xlink:href="Imgs/3rd.png"    opacity="0">
+      <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.085;0.095;0.105;1" dur="42s" repeatCount="indefinite"/>
+    </image>
+
+    <!-- Repeat pattern for 4th → 13th (short flashes at 648,312) -->
+    <image id="frame-4th"    x="0" y="0" width="821" height="587" xlink:href="Imgs/4th.png"    opacity="0">
+      <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.105;0.115;0.125;1" dur="42s" repeatCount="indefinite"/>
+    </image>
+
+    <!-- ... add 5th to 13th with similar short intervals ... -->
+
+    <!-- Example for later frames (adjust keyTimes proportionally) -->
+    <image id="frame-14th"   x="0" y="0" width="821" height="587" xlink:href="Imgs/14th.png"   opacity="0">
+      <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.30;0.305;0.33;1" dur="42s" repeatCount="indefinite"/>
+    </image>
+
+    <image id="frame-22th"   x="0" y="0" width="821" height="587" xlink:href="Imgs/22th.png"   opacity="0">
+      <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.42;0.425;0.45;1" dur="42s" repeatCount="indefinite"/>
+    </image>
+
+    <!-- ... continue for 23th–34th ... -->
+
+    <image id="frame-34th"   x="0" y="0" width="821" height="587" xlink:href="Imgs/34th.png"   opacity="0">
+      <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.92;0.925;0.98;1" dur="42s" repeatCount="indefinite"/>
+    </image>
+
+    <!-- Final return to main -->
+    <image id="frame-main-end" x="0" y="0" width="821" height="587" xlink:href="Imgs/Main.png" opacity="0">
+      <animate attributeName="opacity" values="0;0;1" keyTimes="0;0.98;1" dur="42s" repeatCount="indefinite"/>
+    </image>
+
   </g>
 
-  <script type="text/ecmascript"><![CDATA[
-    (function() {
-      const cursor = document.getElementById('cursor');
-      const overlay = document.getElementById('overlay');
+  <!-- Mouse cursor -->
+  <g id="cursor">
+    <path d="M55 50.5158L0.0365621 0L0 74.6314L16.6788 58.6804L26.4748 81L41.7584 74.2988L31.9624 51.9792L55 50.5158Z"
+          fill="white" stroke="black" stroke-width="4">
+      <!-- Scale animation for clicks (down to ~0.6 then back) -->
+      <animateTransform attributeName="transform" type="scale"
+        values="1;1;0.6;0.6;1;1;1;0.6;0.6;1;1;1;1;1;1;1;1;1;1;1;1;1;1"
+        keyTimes="0;0.07;0.072;0.075;0.077; 0.30;0.302;0.305;0.307; 0.42;0.422;0.425;0.427; 0.98;1"
+        dur="42s" repeatCount="indefinite" additive="sum"/>
 
-      const steps = [
-        {x: 330,  y: 223,  wait: 3.32, click: false, img: "Imgs/Main.png"},
-        {x: 648,  y: 312,  wait: 2.22, click: false, img: "Imgs/Main.png"},
-        {x: 648,  y: 312,  wait: 0.03, click: true,  img: "Imgs/2nd.png"},
-        {x: 658,  y: 323,  wait: 0.22, click: true,  img: "Imgs/26th.png"},
-        {x: 330,  y: 223,  wait: 0.32, click: false, img: "Imgs/Main.png"}
-      ];
+      <!-- Main movement -->
+      <animateMotion dur="42s" repeatCount="indefinite" calcMode="linear">
+        <mpath xlink:href="#motionPath"/>
+      </animateMotion>
+    </path>
+  </g>
 
-      function moveSmooth(x, y) {
-        cursor.style.transition = "transform 1.8s cubic-bezier(0.22,1,0.36,1)";
-        cursor.setAttribute("transform", `translate(${x-11.5},${y-11.5})`);
-      }
-
-      async function clickEffect(x, y) {
-        cursor.style.transition = "transform 0.14s ease";
-        cursor.setAttribute("transform", `translate(${x-11.5},${y-11.5}) scale(0.6)`);
-        await new Promise(r => setTimeout(r, 120));
-        cursor.style.transition = "transform 0.4s ease-out";
-        cursor.setAttribute("transform", `translate(${x-11.5},${y-11.5}) scale(1)`);
-      }
-
-      async function playSequence() {
-        while (true) {
-          for (const step of steps) {
-            overlay.setAttributeNS("http://www.w3.org/1999/xlink", "href", step.img);
-
-            const cx = step.x;
-            const cy = step.y;
-
-            if (step.click) {
-              await clickEffect(cx, cy);
-            } else {
-              moveSmooth(cx, cy);
-            }
-
-            await new Promise(r => setTimeout(r, step.wait * 1000));
-          }
-        }
-      }
-
-      // Start the animation
-      playSequence();
-    })();
-  ]]></script>
+  <!-- Invisible motion path (positions are approximate – centered cursor) -->
+  <path id="motionPath" fill="none" stroke="none"
+        d="M 319 212
+           M 637 301
+           M 637 301   <!-- click -->
+           M 637 301   M 615 339   <!-- move to 626,350 -->
+           M 615 339   <!-- click -->
+           M 615 339   M 626 381   <!-- to 637,392 -->
+           M 626 381   <!-- click -->
+           M 531 396
+           M 382 364
+           M 382 364   <!-- click -->
+           M 647 312
+           M 647 312   <!-- click -->
+           M 647 312
+           M 313 180
+           M 313 180   <!-- click -->
+           M 343 201
+           M 343 201   <!-- click -->
+           M 301 504
+           M 231 524
+           M 231 524   <!-- click -->
+           M 319 212   <!-- back to start -->
+           "/>
 
 </svg>
