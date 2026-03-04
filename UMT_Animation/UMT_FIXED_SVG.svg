@@ -1,139 +1,96 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>UMT_Tool_Cracked_Showcase</title>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg 
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="1280px" 
+  height="596px" 
+  viewBox="0 0 1280 596"
+  style="background: black;">
 
-<style>
-body {
-    margin: 0;
-    background: black;
-}
+  <!-- Background shadow layer -->
+  <image 
+    x="0" y="0" 
+    width="1280" height="596"
+    xlink:href="Application_Shadow.png"/>
 
-#container {
-    position: relative;
-    width: 1280px;
-    height: 596px;
-    margin: 0 auto;
-}
+  <!-- Base/main image layer (usually stays the same) -->
+  <image 
+    id="mainLayer"
+    x="218" y="0" 
+    width="821" height="587"
+    xlink:href="Imgs/Main.png"/>
 
-#mouseSvg {
-    position: absolute;
-    width: 23px;
-    height: 23px;
-    z-index: 10;
-    pointer-events: none;
-    transition: transform 1.8s cubic-bezier(0.22,1,0.36,1);
-}
-</style>
-</head>
-<body>
+  <!-- Overlay layer — this one changes -->
+  <image 
+    id="overlay"
+    x="220" y="0" 
+    width="821" height="587"
+    xlink:href="Imgs/Main.png"/>
 
-<div id="container">
-
-    <svg id="mainSvg"
-         width="1280"
-         height="596"
-         viewBox="0 0 1280 596"
-         xmlns="http://www.w3.org/2000/svg"
-         xmlns:xlink="http://www.w3.org/1999/xlink"
-         preserveAspectRatio="xMidYMid meet">
-
-        <!-- BACKGROUND SHADOW -->
-        <image id="backgroundLayer"
-               x="0"
-               y="0"
-               width="1280"
-               height="596"
-               xlink:href="Application_Shadow.png" />
-
-        <!-- MAIN IMAGE -->
-        <image id="mainLayer"
-               x="218"
-               y="0"
-               width="821"
-               height="587"
-               xlink:href="Imgs/Main.png" />
-
-        <!-- OVERLAY IMAGE (dynamic) -->
-        <image id="overlayLayer"
-               x="220"
-               y="0"
-               width="821"
-               height="587"
-               xlink:href="Imgs/Main.png" />
-
-        <!-- SMALL MOUSE POINTER -->
-        <g id="mouseGroup" transform="translate(0,0)">
-            <svg id="mouseSvg"
-                 width="23"
-                 height="23"
-                 viewBox="0 0 55 81"
-                 xmlns="http://www.w3.org/2000/svg">
-                <path d="M55 50.5158L0.0365621 0L0 74.6314L16.6788 58.6804L26.4748 81L41.7584 74.2988L31.9624 51.9792L55 50.5158Z"
-                      fill="white"
-                      stroke="black"
-                      stroke-width="4"/>
-            </svg>
-        </g>
-
+  <!-- Mouse cursor group -->
+  <g id="cursor" transform="translate(100,100)">
+    <svg 
+      width="23" 
+      height="23" 
+      viewBox="0 0 55 81"
+      style="transition: transform 1.8s cubic-bezier(0.22,1,0.36,1);"
+    >
+      <path 
+        d="M55 50.5158L0.0365621 0L0 74.6314L16.6788 58.6804L26.4748 81L41.7584 74.2988L31.9624 51.9792L55 50.5158Z"
+        fill="white"
+        stroke="black"
+        stroke-width="4"/>
     </svg>
+  </g>
 
-</div>
+  <script type="text/ecmascript"><![CDATA[
+    (function() {
+      const cursor = document.getElementById('cursor');
+      const overlay = document.getElementById('overlay');
 
-<script>
-const mouseSvg = document.getElementById("mouseGroup");
-const overlayLayer = document.getElementById("overlayLayer");
+      const steps = [
+        {x: 330,  y: 223,  wait: 3.32, click: false, img: "Imgs/Main.png"},
+        {x: 648,  y: 312,  wait: 2.22, click: false, img: "Imgs/Main.png"},
+        {x: 648,  y: 312,  wait: 0.03, click: true,  img: "Imgs/2nd.png"},
+        {x: 658,  y: 323,  wait: 0.22, click: true,  img: "Imgs/26th.png"},
+        {x: 330,  y: 223,  wait: 0.32, click: false, img: "Imgs/Main.png"}
+      ];
 
-const scriptLines = `
-X: 330 Y: 223 Wait: 3.32 Click: No Image: Imgs/Main.png
-X: 648 Y: 312 Wait: 2.22 Click: No Image: Imgs/Main.png
-X: 648 Y: 312 Wait: 0.03 Click: Yes Image: Imgs/2nd.png
-X: 658 Y: 323 Wait: 0.22 Click: Yes Image: Imgs/26th.png
-X: 330 Y: 223 Wait: 0.32 Click: No Image: Imgs/Main.png
-`.trim().split("\n");
+      function moveSmooth(x, y) {
+        cursor.style.transition = "transform 1.8s cubic-bezier(0.22,1,0.36,1)";
+        cursor.setAttribute("transform", `translate(${x-11.5},${y-11.5})`);
+      }
 
-function moveSmooth(x, y) {
-    mouseSvg.style.transition = "transform 1.8s cubic-bezier(0.22,1,0.36,1)";
-    mouseSvg.setAttribute("transform", `translate(${x},${y})`);
-}
+      async function clickEffect(x, y) {
+        cursor.style.transition = "transform 0.14s ease";
+        cursor.setAttribute("transform", `translate(${x-11.5},${y-11.5}) scale(0.6)`);
+        await new Promise(r => setTimeout(r, 120));
+        cursor.style.transition = "transform 0.4s ease-out";
+        cursor.setAttribute("transform", `translate(${x-11.5},${y-11.5}) scale(1)`);
+      }
 
-async function clickEffect(x, y) {
-    mouseSvg.style.transition = "transform 0.14s ease";
-    mouseSvg.setAttribute("transform", `translate(${x},${y}) scale(0.6)`);
-    await new Promise(r => setTimeout(r, 120));
-    mouseSvg.style.transition = "transform 0.4s ease-out";
-    mouseSvg.setAttribute("transform", `translate(${x},${y}) scale(1)`);
-}
+      async function playSequence() {
+        while (true) {
+          for (const step of steps) {
+            overlay.setAttributeNS("http://www.w3.org/1999/xlink", "href", step.img);
 
-async function runLoop() {
-    while (true) {
-        for (const line of scriptLines) {
+            const cx = step.x;
+            const cy = step.y;
 
-            const x = parseInt(line.match(/X:\s*(\d+)/)[1]);
-            const y = parseInt(line.match(/Y:\s*(\d+)/)[1]);
-            const wait = parseFloat(line.match(/Wait:\s*([\d.]+)/)[1]) * 1000;
-            const click = line.match(/Click:\s*(Yes|No)/i)[1] === "Yes";
-            const image = line.match(/Image:\s*(.+)/i)[1];
-
-            overlayLayer.setAttributeNS(
-                "http://www.w3.org/1999/xlink",
-                "href",
-                image
-            );
-
-            if (click) {
-                await clickEffect(x, y);
+            if (step.click) {
+              await clickEffect(cx, cy);
             } else {
-                moveSmooth(x, y);
+              moveSmooth(cx, cy);
             }
 
-            await new Promise(r => setTimeout(r, wait));
+            await new Promise(r => setTimeout(r, step.wait * 1000));
+          }
         }
-    }
-}
+      }
 
-runLoop();
-</script>
+      // Start the animation
+      playSequence();
+    })();
+  ]]></script>
 
-</body>
-</html>
+</svg>
