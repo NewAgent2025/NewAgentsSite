@@ -1,13 +1,13 @@
 <svg width="1280" height="596" viewBox="0 0 1280 596" xmlns="http://www.w3.org/2000/svg">
 
     <!-- Background Image -->
-    <image href="Application_Shadow.png"
+    <image href="https://newagent2025.github.io/NewAgentsSite/UMT_Animation/Application_Shadow.png"
            x="0" y="0"
            width="1245" height="596"
            preserveAspectRatio="none" />
 
     <!-- Overlay Image -->
-    <image href="Imgs/Main.png"
+    <image href="https://newagent2025.github.io/NewAgentsSite/UMT_Animation/Imgs/Main.png"
            x="218" y="0"
            width="821" height="587"
            preserveAspectRatio="none" />
