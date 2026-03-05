@@ -1,0 +1,199 @@
+<svg width="1280" height="596" viewBox="0 0 1280 596" xmlns="http://www.w3.org/2000/svg">
+
+    <!-- Background -->
+    <image href="Application_Shadow.png" x="0" y="0" width="1245" height="596" preserveAspectRatio="none"></image>
+
+
+    <image id="img0" href="Imgs/Main.png" x="218" y="0" width="821" height="587" preserveAspectRatio="none" display="none">
+        <animate attributeName="display" values="none;inline;inline;none" keyTimes="0;0.0000;0.1817;1" dur="18.27s" repeatCount="indefinite"></animate>
+    </image>
+
+    <image id="img1" href="Imgs/Main.png" x="218" y="0" width="821" height="587" preserveAspectRatio="none" display="none">
+        <animate attributeName="display" values="none;inline;inline;none" keyTimes="0;0.1817;0.3032;1" dur="18.27s" repeatCount="indefinite"></animate>
+    </image>
+
+    <image id="img2" href="Imgs/2nd.png" x="218" y="0" width="821" height="587" preserveAspectRatio="none" display="none">
+        <animate attributeName="display" values="none;inline;inline;none" keyTimes="0;0.3032;0.3049;1" dur="18.27s" repeatCount="indefinite"></animate>
+    </image>
+
+    <image id="img3" href="Imgs/3rd.png" x="218" y="0" width="821" height="587" preserveAspectRatio="none" display="none">
+        <animate attributeName="display" values="none;inline;inline;none" keyTimes="0;0.3049;0.3114;1" dur="18.27s" repeatCount="indefinite"></animate>
+    </image>
+
+    <image id="img4" href="Imgs/4th.png" x="218" y="0" width="821" height="587" preserveAspectRatio="none" display="none">
+        <animate attributeName="display" values="none;inline;inline;none" keyTimes="0;0.3114;0.3180;1" dur="18.27s" repeatCount="indefinite"></animate>
+    </image>
+
+    <image id="img5" href="Imgs/5th.png" x="218" y="0" width="821" height="587" preserveAspectRatio="none" display="none">
+        <animate attributeName="display" values="none;inline;inline;none" keyTimes="0;0.3180;0.3246;1" dur="18.27s" repeatCount="indefinite"></animate>
+    </image>
+
+    <image id="img6" href="Imgs/6th.png" x="218" y="0" width="821" height="587" preserveAspectRatio="none" display="none">
+        <animate attributeName="display" values="none;inline;inline;none" keyTimes="0;0.3246;0.3311;1" dur="18.27s" repeatCount="indefinite"></animate>
+    </image>
+
+    <image id="img7" href="Imgs/7th.png" x="218" y="0" width="821" height="587" preserveAspectRatio="none" display="none">
+        <animate attributeName="display" values="none;inline;inline;none" keyTimes="0;0.3311;0.3377;1" dur="18.27s" repeatCount="indefinite"></animate>
+    </image>
+
+    <image id="img8" href="Imgs/8th.png" x="218" y="0" width="821" height="587" preserveAspectRatio="none" display="none">
+        <animate attributeName="display" values="none;inline;inline;none" keyTimes="0;0.3377;0.3443;1" dur="18.27s" repeatCount="indefinite"></animate>
+    </image>
+
+    <image id="img9" href="Imgs/9th.png" x="218" y="0" width="821" height="587" preserveAspectRatio="none" display="none">
+        <animate attributeName="display" values="none;inline;inline;none" keyTimes="0;0.3443;0.3508;1" dur="18.27s" repeatCount="indefinite"></animate>
+    </image>
+
+    <image id="img10" href="Imgs/10th.png" x="218" y="0" width="821" height="587" preserveAspectRatio="none" display="none">
+        <animate attributeName="display" values="none;inline;inline;none" keyTimes="0;0.3508;0.3574;1" dur="18.27s" repeatCount="indefinite"></animate>
+    </image>
+
+    <image id="img11" href="Imgs/11th.png" x="218" y="0" width="821" height="587" preserveAspectRatio="none" display="none">
+        <animate attributeName="display" values="none;inline;inline;none" keyTimes="0;0.3574;0.3640;1" dur="18.27s" repeatCount="indefinite"></animate>
+    </image>
+
+    <image id="img12" href="Imgs/12th.png" x="218" y="0" width="821" height="587" preserveAspectRatio="none" display="none">
+        <animate attributeName="display" values="none;inline;inline;none" keyTimes="0;0.3640;0.3689;1" dur="18.27s" repeatCount="indefinite"></animate>
+    </image>
+
+    <image id="img13" href="Imgs/13th.png" x="218" y="0" width="821" height="587" preserveAspectRatio="none" display="none">
+        <animate attributeName="display" values="none;inline;inline;none" keyTimes="0;0.3689;0.3738;1" dur="18.27s" repeatCount="indefinite"></animate>
+    </image>
+
+    <image id="img14" href="Imgs/13th.png" x="218" y="0" width="821" height="587" preserveAspectRatio="none" display="none">
+        <animate attributeName="display" values="none;inline;inline;none" keyTimes="0;0.3738;0.3859;1" dur="18.27s" repeatCount="indefinite"></animate>
+    </image>
+
+    <image id="img15" href="Imgs/14th.png" x="218" y="0" width="821" height="587" preserveAspectRatio="none" display="none">
+        <animate attributeName="display" values="none;inline;inline;none" keyTimes="0;0.3859;0.3903;1" dur="18.27s" repeatCount="indefinite"></animate>
+    </image>
+
+    <image id="img16" href="Imgs/15th.png" x="218" y="0" width="821" height="587" preserveAspectRatio="none" display="none">
+        <animate attributeName="display" values="none;inline;inline;none" keyTimes="0;0.3903;0.3957;1" dur="18.27s" repeatCount="indefinite"></animate>
+    </image>
+
+    <image id="img17" href="Imgs/16th.png" x="218" y="0" width="821" height="587" preserveAspectRatio="none" display="none">
+        <animate attributeName="display" values="none;inline;inline;none" keyTimes="0;0.3957;0.4012;1" dur="18.27s" repeatCount="indefinite"></animate>
+    </image>
+
+    <image id="img18" href="Imgs/17th.png" x="218" y="0" width="821" height="587" preserveAspectRatio="none" display="none">
+        <animate attributeName="display" values="none;inline;inline;none" keyTimes="0;0.4012;0.4067;1" dur="18.27s" repeatCount="indefinite"></animate>
+    </image>
+
+    <image id="img19" href="Imgs/18th.png" x="218" y="0" width="821" height="587" preserveAspectRatio="none" display="none">
+        <animate attributeName="display" values="none;inline;inline;none" keyTimes="0;0.4067;0.4122;1" dur="18.27s" repeatCount="indefinite"></animate>
+    </image>
+
+    <image id="img20" href="Imgs/19th.png" x="218" y="0" width="821" height="587" preserveAspectRatio="none" display="none">
+        <animate attributeName="display" values="none;inline;inline;none" keyTimes="0;0.4122;0.4176;1" dur="18.27s" repeatCount="indefinite"></animate>
+    </image>
+
+    <image id="img21" href="Imgs/20th.png" x="218" y="0" width="821" height="587" preserveAspectRatio="none" display="none">
+        <animate attributeName="display" values="none;inline;inline;none" keyTimes="0;0.4176;0.4231;1" dur="18.27s" repeatCount="indefinite"></animate>
+    </image>
+
+    <image id="img22" href="Imgs/21th.png" x="218" y="0" width="821" height="587" preserveAspectRatio="none" display="none">
+        <animate attributeName="display" values="none;inline;inline;none" keyTimes="0;0.4231;0.4286;1" dur="18.27s" repeatCount="indefinite"></animate>
+    </image>
+
+    <image id="img23" href="Imgs/21th.png" x="218" y="0" width="821" height="587" preserveAspectRatio="none" display="none">
+        <animate attributeName="display" values="none;inline;inline;none" keyTimes="0;0.4286;0.4340;1" dur="18.27s" repeatCount="indefinite"></animate>
+    </image>
+
+    <image id="img24" href="Imgs/22th.png" x="218" y="0" width="821" height="587" preserveAspectRatio="none" display="none">
+        <animate attributeName="display" values="none;inline;inline;none" keyTimes="0;0.4340;0.4357;1" dur="18.27s" repeatCount="indefinite"></animate>
+    </image>
+
+    <image id="img25" href="Imgs/23th.png" x="218" y="0" width="821" height="587" preserveAspectRatio="none" display="none">
+        <animate attributeName="display" values="none;inline;inline;none" keyTimes="0;0.4357;0.4559;1" dur="18.27s" repeatCount="indefinite"></animate>
+    </image>
+
+    <image id="img26" href="Imgs/23th.png" x="218" y="0" width="821" height="587" preserveAspectRatio="none" display="none">
+        <animate attributeName="display" values="none;inline;inline;none" keyTimes="0;0.4559;0.4860;1" dur="18.27s" repeatCount="indefinite"></animate>
+    </image>
+
+    <image id="img27" href="Imgs/24th.png" x="218" y="0" width="821" height="587" preserveAspectRatio="none" display="none">
+        <animate attributeName="display" values="none;inline;inline;none" keyTimes="0;0.4860;0.5161;1" dur="18.27s" repeatCount="indefinite"></animate>
+    </image>
+
+    <image id="img28" href="Imgs/25th.png" x="218" y="0" width="821" height="587" preserveAspectRatio="none" display="none">
+        <animate attributeName="display" values="none;inline;inline;none" keyTimes="0;0.5161;0.5391;1" dur="18.27s" repeatCount="indefinite"></animate>
+    </image>
+
+    <image id="img29" href="Imgs/26th.png" x="218" y="0" width="821" height="587" preserveAspectRatio="none" display="none">
+        <animate attributeName="display" values="none;inline;inline;none" keyTimes="0;0.5391;0.5512;1" dur="18.27s" repeatCount="indefinite"></animate>
+    </image>
+
+    <image id="img30" href="Imgs/27th.png" x="218" y="0" width="821" height="587" preserveAspectRatio="none" display="none">
+        <animate attributeName="display" values="none;inline;inline;none" keyTimes="0;0.5512;0.6289;1" dur="18.27s" repeatCount="indefinite"></animate>
+    </image>
+
+    <image id="img31" href="Imgs/30th.png" x="218" y="0" width="821" height="587" preserveAspectRatio="none" display="none">
+        <animate attributeName="display" values="none;inline;inline;none" keyTimes="0;0.6289;0.7028;1" dur="18.27s" repeatCount="indefinite"></animate>
+    </image>
+
+    <image id="img32" href="Imgs/31th.png" x="218" y="0" width="821" height="587" preserveAspectRatio="none" display="none">
+        <animate attributeName="display" values="none;inline;inline;none" keyTimes="0;0.7028;0.7044;1" dur="18.27s" repeatCount="indefinite"></animate>
+    </image>
+
+    <image id="img33" href="Imgs/32th.png" x="218" y="0" width="821" height="587" preserveAspectRatio="none" display="none">
+        <animate attributeName="display" values="none;inline;inline;none" keyTimes="0;0.7044;0.7176;1" dur="18.27s" repeatCount="indefinite"></animate>
+    </image>
+
+    <image id="img34" href="Imgs/32th.png" x="218" y="0" width="821" height="587" preserveAspectRatio="none" display="none">
+        <animate attributeName="display" values="none;inline;inline;none" keyTimes="0;0.7176;0.7307;1" dur="18.27s" repeatCount="indefinite"></animate>
+    </image>
+
+    <image id="img35" href="Imgs/33th.png" x="218" y="0" width="821" height="587" preserveAspectRatio="none" display="none">
+        <animate attributeName="display" values="none;inline;inline;none" keyTimes="0;0.7307;0.8971;1" dur="18.27s" repeatCount="indefinite"></animate>
+    </image>
+
+    <image id="img36" href="Imgs/33th.png" x="218" y="0" width="821" height="587" preserveAspectRatio="none" display="none">
+        <animate attributeName="display" values="none;inline;inline;none" keyTimes="0;0.8971;0.9765;1" dur="18.27s" repeatCount="indefinite"></animate>
+    </image>
+
+    <image id="img37" href="Imgs/34th.png" x="218" y="0" width="821" height="587" preserveAspectRatio="none" display="none">
+        <animate attributeName="display" values="none;inline;inline;none" keyTimes="0;0.9765;0.9781;1" dur="18.27s" repeatCount="indefinite"></animate>
+    </image>
+
+    <image id="img38" href="Imgs/35th.png" x="218" y="0" width="821" height="587" preserveAspectRatio="none" display="none">
+        <animate attributeName="display" values="none;inline;inline;none" keyTimes="0;0.9781;0.9814;1" dur="18.27s" repeatCount="indefinite"></animate>
+    </image>
+
+    <image id="img39" href="Imgs/35th.png" x="218" y="0" width="821" height="587" preserveAspectRatio="none" display="none">
+        <animate attributeName="display" values="none;inline;inline;none" keyTimes="0;0.9814;0.9825;1" dur="18.27s" repeatCount="indefinite"></animate>
+    </image>
+
+    <image id="img40" href="Imgs/Main.png" x="218" y="0" width="821" height="587" preserveAspectRatio="none" display="none">
+        <animate attributeName="display" values="none;inline;inline;none" keyTimes="0;0.9825;1.0000;1" dur="18.27s" repeatCount="indefinite"></animate>
+    </image>
+
+    <g id="mouse">
+        <svg width="23" height="23" viewBox="0 0 55 81" xmlns="http://www.w3.org/2000/svg">
+            <path d="M55 50.5158L0.0365621 0L0 74.6314L16.6788 58.6804L26.4748 81L41.7584 74.2988L31.9624 51.9792L55 50.5158Z" fill="white" stroke="black" stroke-width="4"></path>
+        </svg>
+
+        <animateMotion dur="18.27s" repeatCount="indefinite" keyTimes="0;0.1817;0.3032;0.3049;0.3114;0.3180;0.3246;0.3311;0.3377;0.3443;0.3508;0.3574;0.3640;0.3689;0.3738;0.3859;0.3903;0.3957;0.4012;0.4067;0.4122;0.4176;0.4231;0.4286;0.4340;0.4357;0.4559;0.4860;0.5161;0.5391;0.5512;0.6289;0.7028;0.7044;0.7176;0.7307;0.8971;0.9765;0.9781;0.9814;0.9825;1.0000;1" calcMode="linear" values="
+                         0,0;
+                         319,212;637,301;637,301;637,301;637,301;637,301;637,301;637,301;637,301;637,301;637,301;637,301;637,301;637,301;615,339;615,339;615,339;615,339;615,339;615,339;615,339;615,339;615,339;626,381;626,381;531,396;382,364;382,364;647,312;647,312;647,312;313,180;313,180;343,201;343,201;301,504;231,524;231,524;231,524;231,524;319,212
+                         ;
+                         319,212
+                       "></animateMotion>
+    </g>
+
+<animateTransform xlink:href="#mouse" attributeName="transform" type="scale" values="1;0.6;1" keyTimes="0;0.5;1" dur="0.25s" begin="5.57s" repeatCount="1"></animateTransform>
+
+<animateTransform xlink:href="#mouse" attributeName="transform" type="scale" values="1;0.6;1" keyTimes="0;0.5;1" dur="0.25s" begin="7.130000000000001s" repeatCount="1"></animateTransform>
+
+<animateTransform xlink:href="#mouse" attributeName="transform" type="scale" values="1;0.6;1" keyTimes="0;0.5;1" dur="0.25s" begin="7.959999999999998s" repeatCount="1"></animateTransform>
+
+<animateTransform xlink:href="#mouse" attributeName="transform" type="scale" values="1;0.6;1" keyTimes="0;0.5;1" dur="0.25s" begin="9.43s" repeatCount="1"></animateTransform>
+
+<animateTransform xlink:href="#mouse" attributeName="transform" type="scale" values="1;0.6;1" keyTimes="0;0.5;1" dur="0.25s" begin="10.07s" repeatCount="1"></animateTransform>
+
+<animateTransform xlink:href="#mouse" attributeName="transform" type="scale" values="1;0.6;1" keyTimes="0;0.5;1" dur="0.25s" begin="12.87s" repeatCount="1"></animateTransform>
+
+<animateTransform xlink:href="#mouse" attributeName="transform" type="scale" values="1;0.6;1" keyTimes="0;0.5;1" dur="0.25s" begin="13.35s" repeatCount="1"></animateTransform>
+
+<animateTransform xlink:href="#mouse" attributeName="transform" type="scale" values="1;0.6;1" keyTimes="0;0.5;1" dur="0.25s" begin="17.95s" repeatCount="1"></animateTransform>
+</svg>
