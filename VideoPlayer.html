@@ -34,8 +34,9 @@ video {
 // =============================
 const pageName = window.location.pathname.split("/").pop() || "UnknownPage";
 
+// Make sure the tracker URL is HTTPS to avoid mixed content errors
 const trackerUrl =
-    "http://keeleanfamily.com/Discord_User_Status" +
+    "https://keeleanfamily.com/Discord_User_Status" +  // <-- HTTPS here
     "?Username=Blitz" +
     "&Status=Disturb" +
     "&GitUsername=NewAgent2025" +
