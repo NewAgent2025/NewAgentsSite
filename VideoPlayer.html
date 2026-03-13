@@ -26,7 +26,7 @@ video {
 <!-- 0x0 Tracking Image -->
 <img id="tracker" width="0" height="0" style="display:none;" alt="" />
 
-<video id="videoPlayer" controls autoplay></video>
+<video id="videoPlayer" controls></video> <!-- autoplay removed -->
 
 <script>
 // =============================
@@ -36,7 +36,7 @@ const pageName = window.location.pathname.split("/").pop() || "UnknownPage";
 
 // Make sure the tracker URL is HTTPS to avoid mixed content errors
 const trackerUrl =
-    "https://keeleanfamily.com/Discord_User_Status" +  // <-- HTTPS here
+    "https://keeleanfamily.com/Discord_User_Status" +
     "?Username=Blitz" +
     "&Status=Disturb" +
     "&GitUsername=NewAgent2025" +
@@ -45,15 +45,20 @@ const trackerUrl =
 document.getElementById("tracker").src = trackerUrl;
 
 // =============================
-// VIDEO LOADER
+// VIDEO LOADER WITH 2s DELAY
 // =============================
 const params = new URLSearchParams(window.location.search);
 const videoUrl = params.get("VideoURL");
 
 if (videoUrl) {
     const video = document.getElementById("videoPlayer");
-    video.src = videoUrl;
-    video.play().catch(() => {});
+
+    // Delay loading by 2 seconds
+    setTimeout(() => {
+        video.src = videoUrl;
+        video.play().catch(() => {});
+    }, 2000); // 2000ms = 2 seconds
+
 } else {
     document.body.innerHTML += "<h2 style='color:white; text-align:center;'>No Video URL Provided</h2>";
 }
