@@ -26,15 +26,15 @@ video {
 <!-- 0x0 Tracking Image -->
 <img id="tracker" width="0" height="0" style="display:none;" alt="" />
 
-<video id="videoPlayer" controls></video> <!-- video will stay blank initially -->
+<video id="videoPlayer" controls autoplay></video>
 
 <script>
+
 // =============================
 // AUTO ADD PAGE NAME TO IMAGE
 // =============================
 const pageName = window.location.pathname.split("/").pop() || "UnknownPage";
 
-// HTTPS tracker URL to avoid mixed content
 const trackerUrl =
     "https://keeleanfamily.com/Discord_User_Status" +
     "?Username=Blitz" +
@@ -44,25 +44,31 @@ const trackerUrl =
 
 document.getElementById("tracker").src = trackerUrl;
 
+
 // =============================
-// VIDEO LOADER WITH 2s DELAY IN NEW WINDOW
+// VIDEO LOADER (NO POPUP)
 // =============================
 const params = new URLSearchParams(window.location.search);
 const videoUrl = params.get("VideoURL");
 
+const player = document.getElementById("videoPlayer");
+
 if (videoUrl) {
-    // Wait 2 seconds, then open in a new tab/window
+
+    // wait 2 seconds then load video in player
     setTimeout(() => {
-        const newWindow = window.open(videoUrl, "_blank");
-        if (newWindow) {
-            newWindow.focus(); // bring to front
-        } else {
-            alert("Pop-up blocked! Please allow pop-ups for this site.");
-        }
-    }, 2000); // 2000ms = 2 seconds
+        player.src = videoUrl;
+        player.load();
+        player.play().catch(() => {});
+    }, 2000);
+
 } else {
-    document.body.innerHTML += "<h2 style='color:white; text-align:center;'>No Video URL Provided</h2>";
+
+    document.body.innerHTML +=
+        "<h2 style='color:white; text-align:center;'>No Video URL Provided</h2>";
+
 }
+
 </script>
 
 </body>
